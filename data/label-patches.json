@@ -1,0 +1,130 @@
+{
+  "net/HeliX/nifty/ah.class": {
+    "D/R": "舵量"
+  },
+  "net/HeliX/nifty/q.class": {
+    "D/R": "舵量"
+  },
+  "net/HeliX/nifty/an.class": {
+    "Dead Band": "死区"
+  },
+  "net/HeliX/nifty/w.class": {
+    "Dead Band": "死区"
+  },
+  "net/HeliX/nifty/StickCurveController.class": {
+    "Dead Band: ": "死区：",
+    "Expo: ": "指数：",
+    "D/R: ": "舵量："
+  },
+  "net/HeliX/nifty/ak.class": {
+    "Expo": "指数"
+  },
+  "net/HeliX/nifty/nv.class": {
+    "Expo": "指数"
+  },
+  "net/HeliX/nifty/t.class": {
+    "Expo": "指数"
+  },
+  "net/HeliX/nifty/OnlyExpoStickCurveController.class": {
+    "Expo: ": "指数："
+  },
+  "net/HeliX/p/pf.class": {
+    "Feed Forward Factors": "前馈系数"
+  },
+  "net/HeliX/p/qz.class": {
+    "Feed Forward Factors": "前馈系数"
+  },
+  "net/HeliX/p/st.class": {
+    "Feed Forward Factors": "前馈系数"
+  },
+  "net/HeliX/p/ub.class": {
+    "Feed Forward Factors": "前馈系数"
+  },
+  "net/HeliX/p/pj.class": {
+    "Nick": "俯仰"
+  },
+  "net/HeliX/p/rd.class": {
+    "Nick": "俯仰"
+  },
+  "net/HeliX/p/sx.class": {
+    "Nick": "俯仰"
+  },
+  "net/HeliX/p/uf.class": {
+    "Nick": "俯仰"
+  },
+  "net/HeliX/p/pr.class": {
+    "Roll": "横滚"
+  },
+  "net/HeliX/p/rl.class": {
+    "Roll": "横滚"
+  },
+  "net/HeliX/p/tf.class": {
+    "Roll": "横滚"
+  },
+  "net/HeliX/p/un.class": {
+    "Roll": "横滚"
+  },
+  "net/HeliX/p/ow.class": {
+    "Pitch": "总距"
+  },
+  "net/HeliX/p/qq.class": {
+    "Pitch": "总距"
+  },
+  "net/HeliX/p/sk.class": {
+    "Pitch": "总距"
+  },
+  "net/HeliX/p/uv.class": {
+    "Pitch": "总距"
+  },
+  "net/HeliX/nifty/FileSelectionController.class": {
+    "all files (*.*)": "所有文件 (*.*)"
+  },
+  "net/HeliX/nifty/fp.class": {
+    "medium & low": "中低"
+  },
+  "net/HeliX/p/bk.class": {
+    "Bank 1": "飞行档位 1",
+    "Bank 2": "飞行档位 2",
+    "Bank 3": "飞行档位 3",
+    "Motor off": "关闭动力"
+  },
+  "net/HeliX/p/aja.class": {
+    "Language Selection": "选择语言"
+  },
+  "net/HeliX/p/b.class": {
+    "About HELI-X": "关于 HELI-X"
+  },
+  "net/HeliX/p/q.class": {
+    "Obtain HELI-X": "获取 HELI-X"
+  },
+  "net/HeliX/p/alo.class": {
+    "... searching ...": "正在搜索…"
+  },
+  "net/HeliX/p/io.class": {
+    "Controller Configuration Files (*.xml)": "控制器配置文件 (*.xml)"
+  },
+  "net/HeliX/p/ij.class": {
+    "Invalid port of server": "服务器端口无效"
+  },
+  "net/HeliX/p/lt.class": {
+    "Download Fly & Fun": "下载趣味飞行",
+    "Download failed: ": "下载失败：",
+    "Download finished": "下载完成",
+    "Download finished with problem.": "下载结束，存在错误。",
+    "Downloading ": "正在下载 ",
+    "Delete finished": "删除完成",
+    "Delete finished with problem.": "删除结束，存在错误。",
+    "Deleting ": "正在删除 "
+  },
+  "net/HeliX/p/by.class": {
+    "Move a switch on your controller or\nselect the switch on the left hand side.\nSelect up to four function from the right panel.\nDefine for each of the functions the appropriate ranges in the middle panel.\nCheck the box in case of a push button.": "拨动控制器开关，或在左侧选择开关。\n在右侧最多选择四项功能。\n在中间为每项功能设置生效范围。\n若使用回弹按钮，请勾选“按钮”。"
+  },
+  "net/HeliX/p/w.class": {
+    "Information": "信息"
+  },
+  "net/HeliX/d/bg.class": {
+    "HELI-X Homepage": "官方网站",
+    "HELI-X Forum": "官方论坛",
+    "HELI-X on Facebook": "Facebook 主页"
+  }
+}

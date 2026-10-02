@@ -1,0 +1,9 @@
+{
+  "version": "11.0.2681",
+  "platform": "Linux",
+  "sha256": {
+    "libs/HeliX/HeliX11.jar": "ef82b4dabb4844dea4e41d867a4ca5092ee58fbcc89455a842c3362107777c50",
+    "libs/HeliX/Translation.jar": "0aee347dea76e9cd310484775948e821bf9a41993449746ba54b55e18f9694c7",
+    "libs/jme/styles.zip": "ca2d79532c77d2ab4ff92b20522c9137fe544664f9b3e901a0d6d801dcfcbdd4"
+  }
+}

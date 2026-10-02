@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+*.jar
+*.class
+*.log
+.helix-zh-cn/
+backup*/
+*.pem
+.env*
