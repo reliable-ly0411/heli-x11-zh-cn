@@ -164,5 +164,12 @@
   "net/HeliX/d/a.class": {
     "Airport not available in Demo Version.": "演示版不提供此飞行场地。",
     "Heli not available in Demo Version.": "演示版不提供此机型。"
+  },
+  "net/HeliX/d/bl.class": {
+    "Airport Favorites": "收藏的飞行场",
+    "Models Favorites": "收藏的模型"
+  },
+  "net/HeliX/q/ch.class": {
+    "No Engine": "无动力"
   }
 }
