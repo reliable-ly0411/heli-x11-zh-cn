@@ -17,7 +17,7 @@
 
 Linux 稳定基线为 **补丁 v1.0.0 / HELI-X 11.0.2681**。部署前会同时校验主程序、语言包和字体资源的 SHA-256，具体值在 [`data/compatibility.json`](data/compatibility.json)。版本不同会拒绝安装。
 
-Windows 安装器公开版本为 **1.1.0-beta.1**；**1.1.0 候选尚未公开发布**，结果见 [候选验收记录](docs/release-1.1.0-validation.md)。Windows 版本，适配官方 **HELI-X 11.0.2675 x64**，使用独立的 [`data/compatibility-windows.json`](data/compatibility-windows.json)。macOS 以及其他 HELI-X 构建尚未适配。不要通过更改校验值强行安装；固定标签需要针对新版本重新核对。
+Windows 安装器公开版本为 **1.1.0-beta.1**；**1.1.0 候选尚未公开发布**，结果见 [候选验收记录](docs/release-1.1.0-validation.md)。该候选适配官方 **HELI-X 11.0.2675 x64**，使用独立的 [`data/compatibility-windows.json`](data/compatibility-windows.json)。macOS 以及其他 HELI-X 构建尚未适配。不要通过更改校验值强行安装；固定标签需要针对新版本重新核对。
 
 ## Windows 安装器
 
