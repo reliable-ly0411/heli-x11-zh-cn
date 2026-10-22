@@ -46,7 +46,7 @@ def ensure_stopped(data, exe):
         return  # Cross-platform fixture tests only; production CLI requires Windows.
     env = dict(os.environ, HELIX_PATCH_DATA=str(data), HELIX_PATCH_EXE=str(exe))
     script = r'''$ErrorActionPreference='Stop'
-$roots=@($env:HELIX_PATCH_DATA.TrimEnd('\')+'\',$env:HELIX_PATCH_EXE.TrimEnd('\')+'\')
+$roots=@(($env:HELIX_PATCH_DATA.TrimEnd('\')+'\'),($env:HELIX_PATCH_EXE.TrimEnd('\')+'\'))
 $names=@('java.exe','javaw.exe','HELI-X.exe','HELI-X_VR.exe')
 foreach($p in (Get-CimInstance Win32_Process)) {
  if($names -contains $p.Name) {
