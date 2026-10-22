@@ -17,11 +17,11 @@
 
 Linux 稳定基线为 **补丁 v1.0.0 / HELI-X 11.0.2681**。部署前会同时校验主程序、语言包和字体资源的 SHA-256，具体值在 [`data/compatibility.json`](data/compatibility.json)。版本不同会拒绝安装。
 
-Windows 安装器版本为 **1.1.0**，适配官方 **HELI-X 11.0.2675 x64**，使用独立的 [`data/compatibility-windows.json`](data/compatibility-windows.json)。macOS 以及其他 HELI-X 构建尚未适配。不要通过更改校验值强行安装；固定标签需要针对新版本重新核对。
+Windows 安装器公开版本为 **1.1.0-beta.1**；**1.1.0 候选尚未公开发布**，结果见 [候选验收记录](docs/release-1.1.0-validation.md)。Windows 版本，适配官方 **HELI-X 11.0.2675 x64**，使用独立的 [`data/compatibility-windows.json`](data/compatibility-windows.json)。macOS 以及其他 HELI-X 构建尚未适配。不要通过更改校验值强行安装；固定标签需要针对新版本重新核对。
 
 ## Windows 安装器
 
-从 [Releases](https://github.com/reliable-ly0411/heli-x11-zh-cn/releases) 下载 `setupHeli-X11-1.1.0-win64-zh-CN.exe`。目标为 Windows 10/11 x64；实际自动化测试环境为 Windows 10 x64，Windows 11、ARM64 和 VR 尚未完成运行验收。
+从 [Releases](https://github.com/reliable-ly0411/heli-x11-zh-cn/releases) 获取已公开的安装器；当前公开文件为 `setupHeli-X11-1.1.0-beta.1-win64-zh-CN.exe`，下述 1.1.0 命令示例对应尚未发布的候选包。目标为 Windows 10/11 x64；实际自动化测试环境为 Windows 10 x64，Windows 11、ARM64 和 VR 尚未完成运行验收。
 
 1. 安装官方 HELI-X 11，并至少运行一次，正常退出，以生成设置文件。
 2. 关闭 HELI-X，双击汉化安装器，选择官方程序目录或数据目录。
