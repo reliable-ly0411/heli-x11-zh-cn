@@ -58,7 +58,7 @@ def main():
     for name in ('Installer.cs','app.manifest','build.ps1'):
         shutil.copyfile(ROOT/'windows'/name, args.output/name)
     (args.output/'AssemblyInfo.cs').write_text('using System.Reflection;\n'
-        f'[assembly: AssemblyTitle("HELI-X 11 Chinese Patch")]\n[assembly: AssemblyVersion("{info["fileVersion"]}")]\n'
+        '[assembly: AssemblyTitle("HELI-X 11 Chinese Patch")]\n[assembly: AssemblyVersion("1.0.0.0")]\n'
         f'[assembly: AssemblyFileVersion("{info["fileVersion"]}")]\n[assembly: AssemblyInformationalVersion("{version}")]\n', encoding='utf-8')
     (args.output/'build-info.json').write_text(json.dumps(info,indent=2)+'\n', encoding='utf-8')
     print(json.dumps(info,indent=2))
