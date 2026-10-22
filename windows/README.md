@@ -20,7 +20,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\windows\build.ps1 -Pre
 
 `ExecutionPolicy Bypass` 仅用于本次构建进程，不修改系统策略。产物为 `setupHeli-X11-<VERSION>-win64-zh-CN.exe` 和 `SHA256SUMS`。
 
-包内 `build-info.json` 记录源码提交、工作树是否干净、依赖与文件版本。正式发布使用干净提交构建，发布前校验 `VERSION`、标签、EXE 产品版本、文件版本和附件名一致。Windows 文件版本映射见仓库发布规范。
+包内 `build-info.json` 记录源码提交、工作树是否干净、依赖与文件版本。正式发布使用干净提交构建，发布前校验 `VERSION`、标签、EXE 产品版本、文件版本和附件名一致。Windows 文件版本映射见仓库发布规范。内部 CLR 程序集标识固定为 `1.0.0.0`（不是对外发布版本），因为 CLR 程序集版本拒绝 `65535`；资源中的 FileVersion 与 ProductVersion 仍分别记录 PE 映射和完整 SemVer。
 
 ## 内容与许可
 
@@ -45,7 +45,7 @@ Windows 集成测试要求一个**本机私有**的 ZIP：根目录包含匹配�
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\windows_installer.ps1 `
-  -Installer "D:\build\setupHeli-X11-1.1.0-beta.1-win64-zh-CN.exe" `
+  -Installer "D:\build\setupHeli-X11-1.1.0-win64-zh-CN.exe" `
   -FixtureZip "D:\private\fixture.zip" -TestDirectory "D:\test-new-directory"
 ```
 

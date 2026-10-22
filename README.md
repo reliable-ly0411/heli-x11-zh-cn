@@ -7,7 +7,7 @@
 ## 汉化范围
 
 - 覆盖原英文语言包的 **1,272 个键**，另外增加中文语言名称，共 1,273 个条目。
-- 补齐 **38 个界面类**的固定显示文字，包括舵量、指数、死区、前馈系数、语言选择和部分下载提示。
+- 补齐 **50 个界面类**的固定显示文字，包括舵量、指数、死区、前馈系数、语言选择、回放元数据、演示版限制提示和图形质量选项。
 - 为 **13 组位图字体**补齐译文所需的中文与标点，保留原拉丁字符度量和行高，适配原按钮与窗口布局。
 - 提供“选项 → 语言 → 简体中文”入口，安装后默认使用中文。
 
@@ -17,11 +17,11 @@
 
 Linux 稳定基线为 **补丁 v1.0.0 / HELI-X 11.0.2681**。部署前会同时校验主程序、语言包和字体资源的 SHA-256，具体值在 [`data/compatibility.json`](data/compatibility.json)。版本不同会拒绝安装。
 
-Windows 安装器目前为 **1.1.0-beta.1**，适配官方 **HELI-X 11.0.2675 x64**，使用独立的 [`data/compatibility-windows.json`](data/compatibility-windows.json)。macOS 以及其他 HELI-X 构建尚未适配。不要通过更改校验值强行安装；固定标签需要针对新版本重新核对。
+Windows 安装器公开版本为 **1.1.0-beta.1**；**1.1.0 候选尚未公开发布**，结果见 [候选验收记录](docs/release-1.1.0-validation.md)。Windows 版本，适配官方 **HELI-X 11.0.2675 x64**，使用独立的 [`data/compatibility-windows.json`](data/compatibility-windows.json)。macOS 以及其他 HELI-X 构建尚未适配。不要通过更改校验值强行安装；固定标签需要针对新版本重新核对。
 
-## Windows 安装器（测试版）
+## Windows 安装器
 
-从 [Releases](https://github.com/reliable-ly0411/heli-x11-zh-cn/releases) 下载 `setupHeli-X11-1.1.0-beta.1-win64-zh-CN.exe`。目标为 Windows 10/11 x64；实际自动化测试环境为 Windows 10 x64，Windows 11、ARM64 和 VR 尚未完成运行验收。
+从 [Releases](https://github.com/reliable-ly0411/heli-x11-zh-cn/releases) 获取已公开的安装器；当前公开文件为 `setupHeli-X11-1.1.0-beta.1-win64-zh-CN.exe`，下述 1.1.0 命令示例对应尚未发布的候选包。目标为 Windows 10/11 x64；实际自动化测试环境为 Windows 10 x64，Windows 11、ARM64 和 VR 尚未完成运行验收。
 
 1. 安装官方 HELI-X 11，并至少运行一次，正常退出，以生成设置文件。
 2. 关闭 HELI-X，双击汉化安装器，选择官方程序目录或数据目录。
@@ -34,12 +34,12 @@ Windows 安装器目前为 **1.1.0-beta.1**，适配官方 **HELI-X 11.0.2675 x6
 
 原始备份和安装状态保存在**数据目录**的 `.helix-zh-cn-windows/`，不要删除。修改范围为程序目录的四个标准/VR BAT 启动脚本（存在者）、语言设置、语言列表和中文图标；原版 JAR 保持不变。启动时检查三个原资源及中文覆盖包的 SHA-256，更新后不匹配会自动停用中文覆盖。卸载会保留最新的其他设置和原始备份；之后重新安装前需保留并移走旧状态目录。
 
-本测试版已经验证安装器流程与资源完整性；**尚未完成 Windows 模拟器内全部中文界面、飞行与遥控器、VR 的实机验收**。升级后的 HELI-X 若被拒绝，请保留原文件，不要修改兼容表绕过检测。
+Windows 10 中已检查主要菜单、飞行模式、全局设置、回放列表与控制面板，并验证官方 Kraken 录像的播放、暂停、进度跳转、变速和停止。检查分辨率为 1600×900，未发现所检窗口文字截断或重叠。**没有连接遥控器，未验证手动操纵飞行、控制器校准、VR；音频也未通过运行验收**。具体范围及最终安装器结果见 [`docs/windows-validation.md`](docs/windows-validation.md)。升级后的 HELI-X 若被拒绝，请保留原文件，不要修改兼容表绕过检测。
 
 自动化示例（日志路径需要可写）：
 
 ```powershell
-.\setupHeli-X11-1.1.0-beta.1-win64-zh-CN.exe --command install --helix-dir "D:\HELI-X11" --log "D:\install-zh.log"
+.\setupHeli-X11-1.1.0-win64-zh-CN.exe --command install --helix-dir "D:\HELI-X11" --log "D:\install-zh.log"
 ```
 
 构建步骤及依赖校验见 [`windows/README.md`](windows/README.md)。版本契约见 [`docs/VERSIONS.md`](docs/VERSIONS.md)。

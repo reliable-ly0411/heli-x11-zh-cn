@@ -92,7 +92,7 @@ internal class InstallerForm : Form {
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 52)); layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100)); layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 24));
         layout.Controls.Add(new Label { Text="HELI-X 11 简体中文补丁", Font=new Font(Font.FontFamily,18F,FontStyle.Bold), Dock=DockStyle.Fill, AutoSize=false },0,0);
-        layout.Controls.Add(new Label { Text="Windows x64 测试版 · 请先关闭 HELI-X\n选择已安装的 HELI-X 11 目录。安装前会检查版本并备份，卸载时保留其他设置。", Dock=DockStyle.Fill },0,1);
+        layout.Controls.Add(new Label { Text="Windows x64 · 请先关闭 HELI-X\n选择已安装的 HELI-X 11 目录。安装前会检查版本并备份，卸载时保留其他设置。", Dock=DockStyle.Fill },0,1);
         layout.Controls.Add(new Label { Text="HELI-X 安装目录", Dock=DockStyle.Fill },0,2);
         var row = new TableLayoutPanel { Dock=DockStyle.Fill, ColumnCount=2, RowCount=1, Margin=Padding.Empty };
         row.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,100)); row.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute,94));
