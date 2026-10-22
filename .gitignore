@@ -10,3 +10,6 @@ dist/
 backup*/
 *.pem
 .env*
+*.exe
+*.whl
+.helix-zh-cn-windows/

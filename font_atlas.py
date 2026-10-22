@@ -1,6 +1,6 @@
 """Extend original BMFont resources locally, preserving their Latin metrics."""
 from PIL import Image, ImageDraw, ImageFont
-from pathlib import Path
+from pathlib import PurePosixPath
 import re, zipfile, io
 
 def add_fonts(out, root, chars, fontfile, font_index):
@@ -16,9 +16,9 @@ def add_fonts(out, root, chars, fontfile, font_index):
        font=ImageFont.truetype(fontfile,fs,index=font_index)
        retained=[l for l in lines if l.startswith('char ') and int(re.search(r'id=(-?\d+)',l)[1]) not in chars]
        page_lines=[l for l in lines if l.startswith('page ')];newchars=[];canvas=None;x=y=row=0;pageid=pages-1
-       prefix=Path(name).stem+'_SC'
+       prefix=PurePosixPath(name).stem+'_SC'
        def savepage():
-        buf=io.BytesIO();canvas.save(buf,format='PNG');out.writestr(str(Path(name).parent/f'{prefix}_{pageid}.png'),buf.getvalue())
+        buf=io.BytesIO();canvas.save(buf,format='PNG');out.writestr(str(PurePosixPath(name).parent/f'{prefix}_{pageid}.png'),buf.getvalue())
        for cp in chars:
         c=chr(cp);bbox=font.getbbox(c,anchor='ls');left,top,right,bottom=bbox;cw=right-left;ch=bottom-top
         if cw+2>w or ch+2>h:raise ValueError(name)

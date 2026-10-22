@@ -7,11 +7,13 @@
 - 专项使用 `docs/`、`fix/`、`feat/`；补丁维护线不得覆盖成上游原程序镜像。
 
 ## 版本与产物映射
-- 上游兼容身份为 HELI-X 11.0.2681 Linux，保存在 `data/compatibility.json`；它不是补丁自身的 SemVer。
-- 补丁的独立发布版本、标签前缀和安装归档模板须明确后才发布；内容提交不自动形成版本。
+- 上游兼容身份分别保存在 `data/compatibility.json`（Linux 11.0.2681）和 `data/compatibility-windows.json`（Windows x64 11.0.2675）；它们不是补丁自身的 SemVer。
+- 补丁版本以 `VERSION` 中不带 `v` 的 SemVer 为准；标签使用 `vX.Y.Z`，预发布使用 `vX.Y.Z-beta.N`。最初的 Linux 基线标签早于版本文件，契约见 `docs/VERSIONS.md`。
+- Windows 包名为 `setupHeli-X11-<SemVer>-win64-zh-CN.exe`。PE 四段版本为 `X.Y.Z.N`（beta.N），正式版映射为 `X.Y.Z.65535`；仅允许 beta 编号 1–65534，各核心数字不超过 65535。产品版本保留完整 SemVer。
+- 内容提交不自动形成版本；已发布标签与制品不替换。
 - 汉化包按对应上游风格保留 `-zh-CN`；文件名的平台/架构只反映支持范围。
 
 ## 上游与适用例外
 - 本仓是 HELI-X 的社区补丁源码，不分发模拟器、Java 运行时、模型、场景、激活码或个人配置。
-- 兼容边界为Linux；Windows/macOS 不由该兼容目标涵盖。未知输入哈希拒绝，不能仅修改哈希就声称适配。
+- Linux 与 Windows 使用独立兼容表及安装状态；macOS 不在支持范围内。未知输入哈希拒绝，不能仅修改哈希就声称适配。
 - 原程序许可与本仓原创工具/译文许可分别保留；补丁结果不冒称官方发行。

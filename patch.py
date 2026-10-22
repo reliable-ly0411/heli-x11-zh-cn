@@ -4,7 +4,7 @@ import argparse
 import hashlib
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import shutil
 import struct
@@ -42,8 +42,9 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def compatibility(root):
-    spec = read_json(HERE / 'data/compatibility.json')
+def compatibility(root, spec=None):
+    if spec is None:
+        spec = read_json(HERE / 'data/compatibility.json')
     for name, expected in spec['sha256'].items():
         p = root / name
         require(p.is_file(), f'缺少文件：{p}')
@@ -135,8 +136,8 @@ def payload():
     return zh, labels
 
 
-def build(root, output, font, font_index):
-    spec = compatibility(root)
+def build(root, output, font, font_index, *, spec=None):
+    spec = compatibility(root, spec)
     require(font.is_file(), f'找不到字体：{font}；请安装 fonts-noto-cjk 或使用 --font。')
     zh, labels = payload()
     missing = bundle_keys(root) - zh.keys()
@@ -156,7 +157,7 @@ def build(root, output, font, font_index):
                 for name, mapping in labels.items():
                     z.writestr(name, replace_labels(original.read(name), mapping))
             fonts = add_fonts(z, root, chars, str(font), font_index)
-        report = verify_jar(root, jar)
+        report = verify_jar(root, jar, spec=spec)
         shutil.copy2(jar, output / 'Chinese.jar')
     sums = ''.join(f'{h}  {n}\n' for n, h in spec['sha256'].items())
     (output / 'compatibility.sha256').write_text(sums, encoding='ascii')
@@ -165,8 +166,8 @@ def build(root, output, font, font_index):
     return report
 
 
-def verify_jar(root, jar):
-    compatibility(root)
+def verify_jar(root, jar, *, spec=None):
+    spec = compatibility(root, spec)
     zh, labels = payload()
     chars = {ord(c) for v in list(zh.values()) + [v for m in labels.values() for v in m.values()]
              for c in v if ord(c) > 127}
@@ -184,7 +185,7 @@ def verify_jar(root, jar):
             ids = set(map(int, re.findall(r'^char id=(-?\d+)', text, re.M)))
             require(chars <= ids, f'字体缺字：{name}')
             for image in re.findall(r'^page .*file="([^"]+)"', text, re.M):
-                require(str(Path(name).parent / image) in resources, f'缺少图集：{image}')
+                require(str(PurePosixPath(name).parent / image) in resources, f'缺少图集：{image}')
             fonts += 1
         for name, changes in labels.items():
             before, after = original.read(name), z.read(name)
@@ -195,7 +196,7 @@ def verify_jar(root, jar):
             require(len(old) == len(new) and all(t == changes.get(s, s)
                     for (_, _, s), (_, _, t) in zip(old, new)), f'标签替换异常：{name}')
         require(fonts == 13, '字体资源数量异常')
-    return {'version':'11.0.2681', 'bundleKeys':len(bundle_keys(root)),
+    return {'version':spec['version'], 'bundleKeys':len(bundle_keys(root)),
             'translatedKeys':len(zh), 'fonts':fonts, 'displayClasses':len(labels),
             'fontCoverage':'PASS', 'classBytecodePreserved':'PASS', 'jarCRC':'PASS'}
 
@@ -234,7 +235,10 @@ def atomic_write(path, data):
         os.chmod(tmp, mode)
         os.replace(tmp, path)
     finally:
-        if os.path.exists(tmp): os.unlink(tmp)
+        if os.path.exists(tmp):
+            # Windows cannot unlink a read-only temporary file after a failed replace.
+            os.chmod(tmp, 0o600)
+            os.unlink(tmp)
 
 
 def apply_files(root, updates):

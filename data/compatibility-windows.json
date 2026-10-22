@@ -1,0 +1,9 @@
+{
+  "version": "11.0.2675",
+  "platform": "windows-x64",
+  "sha256": {
+    "libs/HeliX/HeliX11.jar": "25a16885daa0b434ae9f260e4ed5b4f5aff872ec5a738b028faf0ff32f6842db",
+    "libs/HeliX/Translation.jar": "0aee347dea76e9cd310484775948e821bf9a41993449746ba54b55e18f9694c7",
+    "libs/jme/styles.zip": "ca2d79532c77d2ab4ff92b20522c9137fe544664f9b3e901a0d6d801dcfcbdd4"
+  }
+}
