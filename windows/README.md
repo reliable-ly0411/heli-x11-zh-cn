@@ -45,7 +45,7 @@ Windows 集成测试要求一个**本机私有**的 ZIP：根目录包含匹配�
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\windows_installer.ps1 `
-  -Installer "D:\build\setupHeli-X11-1.1.0-beta.1-win64-zh-CN.exe" `
+  -Installer "D:\build\setupHeli-X11-1.1.0-win64-zh-CN.exe" `
   -FixtureZip "D:\private\fixture.zip" -TestDirectory "D:\test-new-directory"
 ```
 

@@ -126,5 +126,43 @@
     "HELI-X Homepage": "官方网站",
     "HELI-X Forum": "官方论坛",
     "HELI-X on Facebook": "Facebook 主页"
+  },
+  "net/HeliX/e/ad.class": {
+    "No Joystick found": "未检测到控制器",
+    "openAL sound driver couldn't be found": "无法加载 OpenAL 音频驱动"
+  },
+  "net/HeliX/h/u.class": {
+    "No Joystick found": "未检测到控制器",
+    "Problems while detecting the controllers": "检测控制器时发生错误"
+  },
+  "net/HeliX/p/vh.class": {
+    "none": "无",
+    "low": "低",
+    "medium": "中",
+    "high": "高"
+  },
+  "net/HeliX/d/ae.class": {
+    "All types": "全部类型"
+  },
+  "net/HeliX/n/b/c.class": {
+    "All types": "全部类型"
+  },
+  "net/HeliX/n/b/d.class": {
+    "All types": "全部类型"
+  },
+  "net/HeliX/n/b/e.class": {
+    "All types": "全部类型"
+  },
+  "net/HeliX/n/b/f.class": {
+    "All types": "全部类型"
+  },
+  "net/HeliX/q/cb.class": {
+    "All types": "全部类型",
+    "Version: ": "版本：",
+    "\nAuthor: ": "\n作者："
+  },
+  "net/HeliX/d/a.class": {
+    "Airport not available in Demo Version.": "演示版不提供此飞行场地。",
+    "Heli not available in Demo Version.": "演示版不提供此机型。"
   }
 }
